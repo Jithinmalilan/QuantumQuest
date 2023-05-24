@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { createBrowserHistory } from "history";
 import HomePage from "../Pages/HomePage";
+import BlogPage from "../Pages/BlogPage";
 
 const customHistory = createBrowserHistory();
 
@@ -19,6 +20,7 @@ const MyRoutes = (props) => {
 
           <Routes>
               <Route exact path="/" element={<HomePage />}></Route>
+              <Route exact path="/blog" element={<BlogPage />}></Route>
           </Routes>
 
       </div>

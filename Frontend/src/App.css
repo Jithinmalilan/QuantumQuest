@@ -28,11 +28,22 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.linkbutton{
+  color: blue;
+  cursor: pointer;
+  font-size: 14px;
+}
+.linkbutton:hover{
+  text-decoration: underline;
+}
+body::-webkit-scrollbar {
+  width: 7px;
+  padding-top: 5px;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: #d3d3d3;
+  border-radius: 10px;
 }
