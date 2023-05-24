@@ -1,0 +1,13 @@
+.categoryGrid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px 75px;
+}
+@media (max-width: 800px) {
+    .categoryGrid{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 50px 0px;
+        padding: 0%;
+    }
+}
