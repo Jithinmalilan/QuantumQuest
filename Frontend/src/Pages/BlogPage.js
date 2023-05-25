@@ -26,7 +26,7 @@ function BlogPage(){
             <div className='' style={{"marginTop":"60px"}}>
                 <span style={{"fontWeight":"700","fontSize":"20px","textDecoration":"underline","userSelect":"none"}}>Trending Now</span>
             </div>
-            <div className='categoryGrid ps-2 mb-5' style={{"marginTop":"40px"}}>
+            <div className='categoryGrid mb-5' style={{"marginTop":"40px","marginLeft":"12px"}}>
                 <ChildCardComponent data={info}/>
                 <ChildCardComponent data={info}/>
                 <ChildCardComponent data={info}/>
@@ -37,7 +37,7 @@ function BlogPage(){
             <div className='' style={{"marginTop":"60px"}}>
                 <span style={{"fontWeight":"700","fontSize":"20px","textDecoration":"underline","userSelect":"none"}}>New Releases</span>
             </div>
-            <div className='categoryGrid ps-2 mb-5' style={{"marginTop":"40px"}}>
+            <div className='categoryGrid mb-5' style={{"marginTop":"40px","marginLeft":"12px"}}>
                 <ChildCardComponent data={info}/>
                 <ChildCardComponent data={info}/>
                 <ChildCardComponent data={info}/>

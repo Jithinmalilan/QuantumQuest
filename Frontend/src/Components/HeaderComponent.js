@@ -21,6 +21,8 @@ function HeaderComponent() {
     //     })
     //   }, [screenSize])
 
+    const url_value = window.location.href.replace('http://localhost:3000/','');
+
     return(
         <header>
             <div className="container header-main pt-2 p-0">
@@ -35,16 +37,24 @@ function HeaderComponent() {
                         <div class="collapse navbar-collapse ms-5" id="navbarNav">
                             <ul class="navbar-nav d-flex justify-content-end">
                                 <li class="nav-item mx-2">
-                                    <a class="nav-link active" href="/">Home</a>
+                                    {
+                                        url_value === "" ? <a class="nav-link active" href="/">Home</a> : <a class="nav-link" href="/">Home</a>
+                                    }
                                 </li>
                                 <li class="nav-item mx-2">
-                                    <a class="nav-link" href="#">Tools & Products</a>
+                                    {
+                                        url_value === "products" ? <a class="nav-link active" href="/">Tools & Products</a> : <a class="nav-link" href="/">Tools & Products</a>
+                                    }
                                 </li>
                                 <li class="nav-item mx-2">
-                                    <a class="nav-link" href="#">Services</a>
+                                    {
+                                        url_value === "services" ? <a class="nav-link active" href="/">Services</a> : <a class="nav-link" href="/">Services</a>
+                                    }
                                 </li>
                                 <li class="nav-item mx-2">
-                                    <a class="nav-link" href="/blog">Blog</a>
+                                    {
+                                        url_value === "blog" ? <a class="nav-link active" href="/blog">Blog</a> : <a class="nav-link" href="/blog">Blog</a>
+                                    }
                                 </li>
                             </ul>
                         </div>

@@ -20,7 +20,7 @@ export default class CarouselCardComponent extends Component {
       };
   
       return (
-        <Slider {...settings}>
+        <Slider {...settings} autoplay="true">
           {images.map((image) => {
             return (
               <div className="wrapper" key={image.id}>
