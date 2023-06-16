@@ -7,11 +7,42 @@ import ConversionCategory from '../Components/ConversionCategory';
 import CarouselCardComponent from '../Components/CarouselCardComponent';
 import ChildCardComponent from '../Components/ChildCardComponent';
 import FooterComponent from '../Components/FooterComponent';
+import { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../Global/Constants';
 
 function HomePage(){
 
     const info1= MasterCardData[0];
     const info2= ConversionCategoryData;
+
+    const [conversionCategoryNames, setconversionCategoryNames] = useState([]);
+
+    const [serviceNames, setServiceNames] = useState([]);
+
+    useEffect(() => {
+        const fetchCategoryData = async () => {
+          try {
+            const response = await fetch(API_BASE_URL+'/categorynames');
+            const jsonData = JSON.parse(await response.json());
+            setconversionCategoryNames(jsonData);
+          } catch (error) {
+            console.log('Error:', error);
+          }
+        };
+
+        const fetchServiceData = async () => {
+            try {
+              const response = await fetch(API_BASE_URL+'/servicenames');
+              const jsonData = JSON.parse(await response.json());
+              setServiceNames(jsonData);
+            } catch (error) {
+              console.log('Error:', error);
+            }
+          };
+          
+          fetchCategoryData();
+          fetchServiceData();
+      }, []);
 
     return(
         <div className='container'>
@@ -31,8 +62,8 @@ function HomePage(){
             </div> 
             <div className='categoryGrid ps-4 mb-4' style={{"marginTop":"40px"}}>
             {
-                info2 === null ? null:
-                info2.map((info) =>{
+                conversionCategoryNames === null ? null:
+                conversionCategoryNames.map((info) =>{
                     return(
                         <ConversionCategory data={info} />
                     )
@@ -48,8 +79,8 @@ function HomePage(){
             </div> 
             <div className='categoryGrid ps-4 mb-4' style={{"marginTop":"40px"}}>
             {
-                info2 === null ? null:
-                info2.map((info) =>{
+                serviceNames === null ? null:
+                serviceNames.map((info) =>{
                     return(
                         <ConversionCategory data={info} />
                     )
